@@ -3,6 +3,10 @@
 source "https://rubygems.org"
 # if there is a super emergency and rubygems is playing up, try
 #source 'http://production.cf.rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '3.3.0'
+
 
 gem "bootsnap", require: false, platform: :mri
 
@@ -54,8 +58,6 @@ gem "discourse-fonts", require: "discourse_fonts"
 gem "message_bus"
 
 gem "rails_multisite"
-
-gem "fast_xs", platform: :ruby
 
 gem "fastimage"
 
@@ -198,7 +200,6 @@ gem "puma", require: false
 
 gem "rbtrace", require: false, platform: :mri
 
-gem "gc_tracer", require: false, platform: :mri
 
 # required for feed importing and embedding
 gem "ruby-readability", require: false
@@ -268,3 +269,7 @@ gem "net-http"
 gem "cgi", ">= 0.3.6", require: false
 
 gem "tzinfo-data"
+
+# legacy
+# gem "gc_tracer", require: false, platform: :mri
+# gem "fast_xs", platform: :ruby
